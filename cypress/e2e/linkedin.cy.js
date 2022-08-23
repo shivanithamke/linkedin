@@ -15,15 +15,19 @@ beforeEach(function () {
 });
 describe("Linked In", () => {
   it("invalide because blank space", () => {
-    login.entername("");
-    login.enterpass("");
+    // login.entername("");
+    cy.get("#username");
+    // login.enterpass("");
+    cy.get("#password");
     login.clicklogin();
-    cy.get(".secondary-action-new").click();
+    cy.get("#error-for-username").should("be.visible");
+    // cy.get(".secondary-action-new").click();
   });
   it("invalide login", () => {
     login.entername("thamkeshivani200@gmail.com");
     login.enterpass("Shiv");
     login.clicklogin();
+    cy.get("#error-for-password").should("be.visible");
     cy.get(".secondary-action-new").click();
   });
 
@@ -31,6 +35,8 @@ describe("Linked In", () => {
     login.entername("thamkeshivani200il.com");
     login.enterpass("ShivBasu@123");
     login.clicklogin();
+    cy.get("#error-for-username").should("be.visible");
+
     cy.get(".secondary-action-new").click();
   });
 
@@ -39,7 +45,10 @@ describe("Linked In", () => {
     login.enterpass("ShivBasu@123");
     login.clicklogin();
     cy.get(".secondary-action-new").click();
-    cy.get("button[id=ember31]").click();
+    cy.get(
+      ".search-global-typeahead__collapsed-search-button-icon > .mercado-match"
+    ).click();
+
     // cy.get(
     //  ".global-nav__primary-items > :nth-child(3) > .app-aware-link > .t-12"
     // ).click();
