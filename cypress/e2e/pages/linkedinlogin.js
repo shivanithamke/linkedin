@@ -4,7 +4,7 @@ export class linkedinlogin{
     signin_loginbutton='.btn__primary--large'//assign locator id
     forget_email='#username'
     
-    //hii all
+    
     entername(username){//username is pass parameter
         cy.get(this.signin_username).type(username)//getname
     }
