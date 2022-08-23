@@ -1,0 +1,14 @@
+{
+  "name": "linkedin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "linkedin.cy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^10.6.0"
+  }
+}
